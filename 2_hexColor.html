@@ -1,0 +1,71 @@
+<html>
+<head>
+    <meta charset="utf-8">
+<title>HexColor</title>
+</head>
+<style>
+html,body{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    margin: 0;
+}    
+.container {
+  height: 100%;
+}
+#main{background-color: #1749A1;}
+.vertical-center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.horizontal-center {
+  margin: 0;
+  position: absolute;
+  left: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}    
+.btn {
+  border-radius: 7px; 
+  width: max-content;
+height: max-content;
+font: bold 30px solid;
+  transition-duration: 0.4s;
+}
+
+.btn:hover {
+  background-color: #393636ba; /* Green */
+  color: white;
+}
+#clr-label{
+  font-size: 5rem;
+  color: #FFFFFF;
+}
+</style>
+<script>
+    
+const hex = ['0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'];
+    function change(){
+        var clr = "";
+        for (var i = 0; i < 6; i++) {
+            const randomNumber = [Math.floor(Math.random() *16)];
+            clr = clr + hex[randomNumber];
+            //console.log(clr+"---"+(randomNumber-1));
+         }
+        document.getElementById('main').style.backgroundColor = clr;
+        document.getElementById('clr-label').innerHTML = "#"+clr;
+    }
+
+</script>
+<body>
+<div class="container" id="main">    
+<div class="vertical-center horizontal-center">
+    <div id="clr-label"></div>
+    <button class="btn" onclick="change()">Click Me</button>
+</div>
+</div>
+</body>
+</html>

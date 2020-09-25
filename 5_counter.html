@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>counter</title>
+	<style type="text/css">
+		html,body{    height: 100%;
+    width: 100%;}
+		.container{
+			background-color: #dddbdb;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 100%;
+			width: 100%;
+		}
+		.main{display: block; justify-content: center;
+			width: 40%;}
+		.cnt{display: flex;justify-content:  center;
+			font-family: Arial;}
+		.buttons{
+			display: flex;
+			justify-content: space-around;
+		}
+		.btn{
+			padding: 10px 15px 10px 15px;	
+			border-radius: 12px;
+			font-family: monospace;
+		}
+		.btn:hover{background-color: lightseagreen;}
+	</style>
+</head>
+<body>
+<div class="container">
+	<div class="main">
+	<h1 class="cnt">Counter</h1><br>
+	<div class="cnt" id="digit"style="font-size: 40px;">0</div><br><br>	
+	<div class="buttons cnt">
+		<button class="btn"id="b1" onclick="Decrease()">Decrease</button>
+		<button class="btn"id="b1" onclick="Reset()">Reset</button>
+		<button class="btn"id="b1" onclick="Increase()">Increase</button>
+	</div>
+	</div>
+</div>
+<script type="text/javascript">
+	var count=0;
+	var digit=document.getElementById('digit');
+	function Decrease() {
+		count=count-1;
+		digit.innerHTML=count;
+	}
+	function Increase() {
+		count=count+1;
+		digit.innerHTML=count;
+	}
+	function Reset(){
+		count=0;
+		digit.innerHTML=0;
+	}
+</script>
+</body>
+</html>
